@@ -269,16 +269,17 @@
         <div class="kicker">サポートページ<br>使い方とよくある質問</div>
       </div>
       <h1>JWWミテハカール</h1>
-      <p class="pitch">Jw_cad の図面（.jww）を iPhone でそのまま開いて、<strong>実寸で長さを測れる</strong>アプリです。</p>
+      <p class="pitch">Jw_cad の図面（.jww）を iPhone でそのまま開いて、<strong>実寸で長さを測れる</strong>アプリです。図面の寸法を<strong>累進寸法</strong>で見ることもできます。</p>
       <ul class="chips">
         <li>距離・面積・体積・角度</li>
+        <li>累進寸法</li>
         <li>電波がなくても使える</li>
         <li>図面はどこにも送らない</li>
       </ul>
     </div>
     <figure>
       <div class="phone">
-        <img src="support/01-overview.webp" width="480" height="1043" alt="JWWミテハカールで見本の図面（住戸の電気平面図）を開いた画面。下に計測・属性・レイヤ・表示・全体のボタンが並ぶ" fetchpriority="high">
+        <img src="support/01-overview-v12.webp" width="480" height="1040" alt="JWWミテハカールで見本の図面（累進寸法の平面図）を開いた画面。下に計測・累進・属性・レイヤ・表示・全体のボタンが並ぶ" fetchpriority="high">
       </div>
     </figure>
   </div>
@@ -291,6 +292,7 @@
     <li><a href="#open">図面を開く</a></li>
     <li><a href="#gestures">基本の操作</a></li>
     <li><a href="#measure">測る</a></li>
+    <li><a href="#ruishin">累進寸法</a></li>
     <li><a href="#view">見やすくする</a></li>
     <li><a href="#faq">よくある質問</a></li>
     <li><a href="#env">動作環境</a></li>
@@ -311,6 +313,10 @@
     <li class="card">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16 16 3l5 5L8 21z"/><path d="m7 12 2 2M10 9l2 2M13 6l2 2"/></svg>
       <b>実寸で測る</b><span>距離・面積・体積・角度</span>
+    </li>
+    <li class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18h18"/><circle cx="4" cy="18" r="1.6"/><path d="M9 18V9M14 18V6M20 18V3"/><path d="m7.5 10.5 1.5-1.5 1.5 1.5M12.5 7.5 14 6l1.5 1.5M18.5 4.5 20 3l1.5 1.5"/></svg>
+      <b>累進寸法</b><span>起点からの寸法に切り替え。起点は指で動かせる</span>
     </li>
     <li class="card">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6M10 7v6M7 10h6"/></svg>
@@ -356,7 +362,7 @@
     <li><b>メール・LINE などから</b>届いた図面を長押し（または共有ボタン）して、共有メニューから「ミテハカール」を選びます。</li>
     <li><b>ZIP で届いたとき</b>LINE などは .jww を ZIP にして届けることがあります。ZIP のまま開けます。中に図面がいくつもあれば、一覧から選べます。</li>
   </ol>
-  <div class="note"><b>手元に図面がなくても大丈夫。</b>最初の画面の <span class="btn">見本の図面を開く</span> で、住戸の電気平面図を開いて試せます（電波がなくても開けます）。</div>
+  <div class="note"><b>手元に図面がなくても大丈夫。</b>最初の画面の <span class="btn">見本の図面を開く</span> で、見本の平面図（累進寸法の平面図）を開いて、計測も累進寸法も試せます（電波がなくても開けます）。</div>
 </section>
 
 <!-- 基本の操作 -->
@@ -470,9 +476,52 @@
   </div>
 </section>
 
+<!-- 累進寸法 -->
+<section id="ruishin">
+  <h2><span class="num" aria-hidden="true">5</span>累進寸法にする</h2>
+  <p>図面に書かれた連続の寸法（1820・1820・910…）を、<b>起点からの累進寸法</b>（1820・3640・4550…）で表示できます。表示を変えるだけで、図面のデータは変えません。</p>
+
+  <div class="split">
+    <div>
+      <h3>累進表示にする</h3>
+      <ol>
+        <li>下の <span class="btn on">累進</span> を選び、パネルの <span class="btn">累進表示</span> を入れます（緑になります）。</li>
+        <li>一直線に並んだ 2 つ以上の寸法の列を自動で見つけて、起点からの数字に変わります。起点には丸、各寸法点には矢印が出ます。</li>
+        <li>寸法線の近くをタップすると、その列を選べます。選んだ列はオレンジ色になります。</li>
+      </ol>
+      <p class="muted small">字が読めないほど縮小しているあいだは、列を選べません（パネルに「拡大すると、寸法列を選べます」と出ます）。数字が読めるくらいまで 2 本指で拡大してください。</p>
+    </div>
+    <figure>
+      <div class="phone"><img src="support/12-ruishin.webp" width="480" height="1040" loading="lazy" alt="累進表示を入れて下の寸法の列を選んだ画面。列がオレンジ色になり、1820・3640・4550・6370・8190 と起点からの数字が出ている。パネルの見出しは「横の列」"></div>
+      <figcaption>累進表示と、選んだ列（オレンジ）</figcaption>
+    </figure>
+  </div>
+
+  <div class="split rev">
+    <div>
+      <h3>起点を動かす</h3>
+      <p>起点の丸を指でつまんで動かします。動かしているあいだは<b>拡大鏡</b>が出て、線の端・交点・線の上に吸い付きます。列を選んでいるときは、<b>長押しした所</b>にも起点を置けます。指を離すと、その列の数字がすぐに計算し直されます。</p>
+      <p>起点を寸法線の外に置いたときは、寸法線が起点まで一時的に延びて見えます（図面は変わりません）。</p>
+      <p><span class="btn">寸法線上のみ</span> を入れると、起点は寸法線の上だけを動き、ほかの線と交わる所にだけ吸い付きます。細かい図面で、関係ない点に吸い付かないようにしたいときに使います。</p>
+    </div>
+    <figure>
+      <div class="phone"><img src="support/13-ruishin-origin.webp" width="480" height="1040" loading="lazy" alt="起点を寸法線の外へ動かした画面。寸法線が起点まで延び、数字が 2620・4440・5350・7170 に変わっている。パネル右上に戻る・進むのボタン"></div>
+      <figcaption>起点を動かすと数字も変わる</figcaption>
+    </figure>
+  </div>
+
+  <h3>やり直す・元に戻す</h3>
+  <ul>
+    <li>パネル右上の <span class="btn">↶</span>（戻る）で起点の操作を 1 つずつ戻し、<span class="btn">↷</span>（進む）でやり直せます。</li>
+    <li>列を選んでいるときは <span class="btn">この列を戻す</span>、選んでいないときは <span class="btn">全列を戻す</span> で、起点を最初の端の位置に戻します。</li>
+    <li><span class="btn">累進表示</span> を切るか、ほかのボタン（計測など）に切り替えると、元の寸法の表示に戻ります。アプリを起動したときは、これまでどおり「計測」から始まります。</li>
+  </ul>
+  <div class="note">累進寸法は、すべての図面・寸法を見つけられるわけではありません。図面の作り方によっては、列として見つからないことがあります。</div>
+</section>
+
 <!-- 属性・レイヤ・表示 -->
 <section id="view">
-  <h2><span class="num" aria-hidden="true">5</span>図面を見やすくする</h2>
+  <h2><span class="num" aria-hidden="true">6</span>図面を見やすくする</h2>
 
   <div class="split">
     <div>
@@ -532,7 +581,7 @@
 
 <!-- よくある質問 -->
 <section id="faq">
-  <h2><span class="num" aria-hidden="true">6</span>よくある質問</h2>
+  <h2><span class="num" aria-hidden="true">7</span>よくある質問</h2>
 
   <details>
     <summary>図面が開けません</summary>
@@ -572,6 +621,17 @@
   </details>
 
   <details>
+    <summary>累進寸法にならない列があります</summary>
+    <div>
+      <ul>
+        <li>累進寸法にできるのは、<b>一直線に並んだ 2 つ以上の寸法</b>の列です。1 本だけの寸法は対象になりません。</li>
+        <li>縮小しているときは、累進の数字・矢印・丸を出さず、列も選べません。数字が読めるくらいまで拡大してください。</li>
+        <li>図面の作り方によっては、寸法の列として見つからないことがあります。その場合は元の寸法のまま表示します。</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
     <summary>電波が入らない所でも使えますか</summary>
     <div>
       <p>はい。iPhone のアプリは、図面の表示と計測にインターネットを使いません。地下や機内モードでもそのまま使えます。</p>
@@ -589,7 +649,7 @@
 
 <!-- 動作環境 -->
 <section id="env">
-  <h2><span class="num" aria-hidden="true">7</span>動作環境</h2>
+  <h2><span class="num" aria-hidden="true">8</span>動作環境</h2>
   <table class="table">
     <tr><th scope="row">iPhone</th><td>iOS 16.4 以降をおすすめします（ZIP で届いた図面を開くのに必要です）。</td></tr>
     <tr><th scope="row">図面</th><td>Jw_cad の .jww（Ver.2.30〜7.x の形式）。ZIP に入ったものも開けます。</td></tr>
@@ -598,7 +658,7 @@
 
 <!-- お問い合わせ -->
 <section id="contact-section">
-  <h2><span class="num" aria-hidden="true">8</span>お問い合わせ</h2>
+  <h2><span class="num" aria-hidden="true">9</span>お問い合わせ</h2>
   <p>不具合やご要望は、こちらからお知らせください。うまくいかないときは、iPhone の機種と iOS のバージョン、どの操作で困ったかを書いていただけると助かります。</p>
   <div id="contact">
     <!-- お問い合わせは Google フォームで受け付ける（Google アカウントがなくても送れる） -->
